@@ -1,0 +1,37 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
+    "test-routes": "npm run test -t router",
+    "test-models": "npm run test -t model",
+    "test-controllers": "npm run test -t controllers",
+    "test-auth": "npm run test -t Authentication:",
+    "dev": "nodemon --exec npm run restart",
+    "restart": "rimraf dist && npm run build && npm run start",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.9",
+    "moongoose": "0.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.0",
+    "@babel/core": "^7.12.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.12.0",
+    "nodemon": "^2.0.5",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2"
+  }
+}
